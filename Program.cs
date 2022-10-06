@@ -30,12 +30,28 @@
         //Bekräfta ordern
         myOrder.Confirm();
 
-        if (myOrder.IsConfirmed)
+        //Testa att skriva ut saker för att testa att den logiken funkar
+        Console.WriteLine(GetOrderDetails(myOrder));
+    }
+
+    public static string GetOrderDetails(Order order)
+    {
+        System.Text.StringBuilder returnString = new();
+        returnString.Append($"Order nr: {order.OrderNo}. Orderdatum: ");
+        if (order.IsConfirmed)
+            returnString.AppendLine($"{order.OrderDate}");
+        else
+            returnString.AppendLine("ORDER OBEKRÄFTAD.");
+        foreach (var product in order.Products)
         {
-            //Testa att skriva ut saker för att testa att den logiken funkar
-            Console.WriteLine($"Order nr {myOrder.OrderNo} skapad {myOrder.OrderDate}");
-            Console.WriteLine("Totalpris: " + myOrder.TotalPrice);
-            Console.WriteLine($"{myOrder.Donation.Amount} kr donerat till {myOrder.Donation.Company}.");
+            returnString.AppendLine($"{product.Type}, {product.Price}:-");
         }
+        returnString.AppendLine($"\nTotalpris: {order.TotalPrice}");
+
+        if (order.IsConfirmed)
+            returnString.AppendLine($"{order.Donation?.Amount} kr donerat till {order.Donation?.Company}.");
+
+        return returnString.ToString();
+
     }
 }

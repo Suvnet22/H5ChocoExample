@@ -1,10 +1,18 @@
 public class Order
 {
-    List<Product> _products { get; set; } = new();
+    readonly List<Product> _products = new();
+    public List<Product> Products
+    {
+        get
+        {
+            return _products;
+        }
+    }
+
     public Donation? Donation { get; set; }
 
-    public int OrderNo { get; private set; }
-    public DateTime OrderDate { get; private set; }
+    public int OrderNo { get; private set; } = new Random().Next(100000, 999999);
+    public DateTime OrderDate { get; private set; } = DateTime.MinValue;
 
     public float TotalPrice
     {
@@ -25,7 +33,6 @@ public class Order
     {
         IsConfirmed = true;
         OrderDate = DateTime.Now;
-        OrderNo = new Random().Next(100000, 999999);
     }
 
     public void AddProduct(Product product)
