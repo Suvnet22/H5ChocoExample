@@ -20,11 +20,7 @@ public class Chocolate : Product
             }
             return basePrice;
         }
-        set
-        {
-            //Här sätter vi bara priset i basklassen, som kan anses vara grundpriset för chokladen.
-            base.Price = value;
-        }
+        //Tog bort Set ur de ärvda klasserna och gjorde den till private i Product
     }
 
     public Chocolate(float price, int cacaoAmount) : base(price)
