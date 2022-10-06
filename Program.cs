@@ -6,21 +6,22 @@
         Order myOrder = new Order();
 
         //Skapa ett en choklad som kostar 100 
-        Chocolate choco = new Chocolate(100, 75);
+        Chocolate choco = new Chocolate("Chokladkaka", 100, 75);
 
         //Skapa en Filling och lägg den till chokladen
-        Filling guldflarn = new(50) { Type = "Guldflarn" };
+        Filling guldflarn = new("Guldflarn", 50);
         choco.AddFilling(guldflarn);
 
         //Vi kan också göra så här, skapa objektet direkt i metodanropet, om vi inte behöver en 
         //referens till det som vi har till 'guldflarn'
-        choco.AddFilling(new Filling(5) { Type = "Sågspån" });
+        choco.AddFilling(new Filling("Sågspån", 5));
 
         //Lägg chokladen till ordern
         myOrder.AddProduct(choco);
 
         //Skapa en keps som kostar 500 och lägg till den till ordern
-        Cap cap = new Cap(500);
+        Cap cap = new Cap("Keps", 500);
+        cap.Size = 1;
         myOrder.AddProduct(cap);
 
         //Lägg till en ny donation till ordern

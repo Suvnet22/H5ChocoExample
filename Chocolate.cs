@@ -23,7 +23,7 @@ public class Chocolate : Product
         //Tog bort Set ur de ärvda klasserna och gjorde den till private i Product
     }
 
-    public Chocolate(float price, int cacaoAmount) : base(price)
+    public Chocolate(string type, float price, int cacaoAmount) : base(price, type)
     {
         //Se till så att cacaomängden inte kan vara mer än 100% eller mindre än 15%
         if (cacaoAmount > 100) cacaoAmount = 100;
