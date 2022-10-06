@@ -23,6 +23,10 @@ public class Chocolate : Product
         }
     }
 
+    public Chocolate(float price) : base(price)
+    {
+    }
+
     public void AddFilling(Filling filling)
     {
         _filling.Add(filling);
