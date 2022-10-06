@@ -23,7 +23,11 @@
         Cap cap = new Cap(500);
         myOrder.AddProduct(cap);
 
+        //Lägg till en ny donation till ordern
+        myOrder.Donation = new Donation(myOrder.TotalPrice, "BY-SUVNET");
+
         //Testa att skriva ut TotalPrice för att testa att den logiken funkar
         Console.WriteLine("Ny order skapad. Totalpris: " + myOrder.TotalPrice);
+        Console.WriteLine($"{myOrder.Donation.Amount} kr donerat till {myOrder.Donation.Company}.");
     }
 }

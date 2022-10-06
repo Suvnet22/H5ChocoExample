@@ -1,6 +1,7 @@
 public class Order
 {
     List<Product> _products { get; set; } = new();
+    public Donation? Donation { get; set; }
 
     public float TotalPrice
     {
