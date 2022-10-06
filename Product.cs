@@ -1,4 +1,4 @@
 public abstract class Product
 {
-    public float Price { get; set; }
+    public virtual float Price { get; set; }
 }
