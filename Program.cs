@@ -6,7 +6,7 @@
         Order myOrder = new Order();
 
         //Skapa ett en choklad som kostar 100 
-        Chocolate choco = new Chocolate(100);
+        Chocolate choco = new Chocolate(100, 75);
 
         //Skapa en Filling och lägg den till chokladen
         Filling guldflarn = new(50) { Type = "Guldflarn" };
