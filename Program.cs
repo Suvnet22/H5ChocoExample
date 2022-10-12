@@ -45,7 +45,7 @@
 
         foreach (var product in order.Products)
         {
-            returnString.AppendLine($"{product.Type}, {product.Category}, {product.Price}:-");
+            returnString.AppendLine($"{product.Name}, {product.Category}, {product.Price}:-");
         }
         returnString.AppendLine($"\nTotalpris: {order.TotalPrice}");
 
