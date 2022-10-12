@@ -30,6 +30,7 @@ public class Chocolate : Product
         else if (cacaoAmount < 15) cacaoAmount = 15;
 
         CacaoAmount = cacaoAmount;
+        Category = Category.Food;
     }
 
     public void AddFilling(Filling filling)

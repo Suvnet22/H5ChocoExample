@@ -21,7 +21,7 @@
 
         //Skapa en keps som kostar 500 och lägg till den till ordern
         Cap cap = new Cap("Keps", 500);
-        cap.Size = 1;
+        cap.Size = CapSize.Medium;
         myOrder.AddProduct(cap);
 
         //Lägg till en ny donation till ordern
@@ -42,9 +42,10 @@
             returnString.AppendLine($"{order.OrderDate}");
         else
             returnString.AppendLine("ORDER OBEKRÄFTAD.");
+
         foreach (var product in order.Products)
         {
-            returnString.AppendLine($"{product.Type}, {product.Price}:-");
+            returnString.AppendLine($"{product.Type}, {product.Category}, {product.Price}:-");
         }
         returnString.AppendLine($"\nTotalpris: {order.TotalPrice}");
 
