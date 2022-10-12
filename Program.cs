@@ -20,8 +20,8 @@
         myOrder.AddProduct(choco);
 
         //Skapa en keps som kostar 500 och lägg till den till ordern
-        Cap cap = new Cap("Keps", 500);
-        cap.Size = CapSize.Medium;
+        Clothes cap = new Clothes("Keps", 500);
+        cap.Size = Size.Medium;
         myOrder.AddProduct(cap);
 
         //Lägg till en ny donation till ordern
